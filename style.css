@@ -106,6 +106,81 @@
     background-color: var(--primary-900);
 }
 
+/* header */
 .container header {
     background-color: var(--primary-500);
+    color: var(--neutro-100);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* header title */
+header .title .img {
+    width: 20px;
+    height: 20px;
+}
+header .title .img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* header nav hamburger */
+header nav .nav-hamburger {
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header nav .nav-hamburger:hover,
+header nav .nav-hamburger:focus {
+    background-color: var(--primary-200);
+}
+header nav .nav-hamburger div {
+    background-color: var(--neutro-100);
+    height: 3px;
+}
+
+/* header nav nav */
+header nav .nav {
+    width: 100%;
+    background-color: var(--primary-700);
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+header nav .nav ul {
+    list-style: none;
+}
+header nav .nav a {
+    display: inline-block;
+    width: 100%;
+    color: var(--neutro-50);
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+}
+header nav .nav a:hover,
+header nav .nav a:focus {
+    background-color: var(--primary-800);
+}
+
+/* body */
+.container main {
+    padding: 0 10px;
+}
+
+/* body principle */
+main .principle .hanging-icons .icon img {
+    width: 20px;
+    height: 20px;
+}
+
+/* body about me */
+main .about-me .description img {
+    width: 20px;
+    height: 20px;
 }
