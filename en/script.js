@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener('click', () => {
         nav.style.display = "block";
         if (parseInt(nav.style.top) < 0) {
-            nav.style.top = 40 + "px";
+            nav.style.top = 50 + "px";
         } else {
             nav.style.top = -150 + "px";
         }
@@ -26,4 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
             nav.style.top = -150 + "px";
         });
     });
+
+    // 
+    let messageDOM = document.querySelector(".message");
+    messageDOM.style.top = "10px";
+    let timeMessage = setInterval(function () {
+        messageDOM.style.top = "-100px";
+    }, 5000);
 });
