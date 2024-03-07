@@ -25,7 +25,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : null;
                     <img src="./img/user.jpg" alt="logo">
                 </div>
                 <div class="title-name">
-                    <h1>ChrysRalf</h1>
+                    <h1 class="h4">ChrysRalf</h1>
                 </div>
             </div>
             <nav>
@@ -36,9 +36,9 @@ $message = isset($_GET['message']) ? $_GET['message'] : null;
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a href="#about-me" class="option">About me</a></li>
-                        <li><a href="#proyects" class="option">Proyects</a></li>
-                        <li><a href="#contact" class="option">Contact</a></li>
+                        <li><a href="#about-me" class="option paragraph">About me</a></li>
+                        <li><a href="#proyects" class="option paragraph">Proyects</a></li>
+                        <li><a href="#contact" class="option paragraph">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -104,22 +104,42 @@ $message = isset($_GET['message']) ? $_GET['message'] : null;
             </div>
             <div class="proyects" id="proyects">
                 <h3 class="h5">Proyects</h3>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/user.jpg" alt="img prueba">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="./img/user.jpg" alt="img prueba">
+                        </div>
+                        <div class="card-description">
+                            <h4 class="h6">Title</h4>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae magnam necessitatibus porro minima doloribus, accusamus commodi obcaecati veniam officiis corporis temporibus labore laborum iusto sunt quasi excepturi incidunt aperiam.
+                            Earum, corporis. Error voluptatem et, distinctio illo magni suscipit natus expedita obcaecati, id, ipsam pariatur in repudiandae aperiam tenetur blanditiis nihil impedit laboriosam repellat corrupti? Eius odit aspernatur tenetur sint.</p>
+                        </div>
+                        <div class="card-tech">
+                            <h4 class="h6">Technologies</h4>
+                            <img src="" alt="">
+                        </div>
+                        <div class="card-buttons">
+                            <button>View</button>
+                            <button>GitHub</button>
+                        </div>
                     </div>
-                    <div class="card-description">
-                        <h4 class="h6">Title</h4>
-                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae magnam necessitatibus porro minima doloribus, accusamus commodi obcaecati veniam officiis corporis temporibus labore laborum iusto sunt quasi excepturi incidunt aperiam.
-                        Earum, corporis. Error voluptatem et, distinctio illo magni suscipit natus expedita obcaecati, id, ipsam pariatur in repudiandae aperiam tenetur blanditiis nihil impedit laboriosam repellat corrupti? Eius odit aspernatur tenetur sint.</p>
-                    </div>
-                    <div class="card-tech">
-                        <h4 class="h6">Technologies</h4>
-                        <img src="" alt="">
-                    </div>
-                    <div class="card-buttons">
-                        <button>View</button>
-                        <button>GitHub</button>
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="./img/user.jpg" alt="img prueba">
+                        </div>
+                        <div class="card-description">
+                            <h4 class="h6">Title</h4>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae magnam necessitatibus porro minima doloribus, accusamus commodi obcaecati veniam officiis corporis temporibus labore laborum iusto sunt quasi excepturi incidunt aperiam.
+                            Earum, corporis. Error voluptatem et, distinctio illo magni suscipit natus expedita obcaecati, id, ipsam pariatur in repudiandae aperiam tenetur blanditiis nihil impedit laboriosam repellat corrupti? Eius odit aspernatur tenetur sint.</p>
+                        </div>
+                        <div class="card-tech">
+                            <h4 class="h6">Technologies</h4>
+                            <img src="" alt="">
+                        </div>
+                        <div class="card-buttons">
+                            <button>View</button>
+                            <button>GitHub</button>
+                        </div>
                     </div>
                 </div>
                 <div class="button">

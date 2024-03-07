@@ -120,7 +120,7 @@
 
 .container {background-color: var(--primary-900); position: relative;}
 
-/*  */
+/* font sizes */
 .container .h1 {font-size: var(--h1-s);}
 .container .h2 {font-size: var(--h2-s);}
 .container .h3 {font-size: var(--h3-s);}
@@ -130,7 +130,7 @@
 .container .paragraph {font-size: var(--paragraph-s);}
 .container .small {font-size: var(--small-s);}
 
-/*  */
+/* contact notice */
 .container .message {
     position: absolute;
     top: -100px;
@@ -154,8 +154,10 @@
 }
 
 /* header title */
+header .title {display: flex; gap: 10px;}
 header .title .img {width: 30px; height: 30px;}
 header .title .img img {width: 100%; height: 100%;}
+header .title .title-name {display: none;}
 
 /* header nav hamburger */
 header nav .nav-hamburger {
@@ -405,5 +407,59 @@ main .contact form .inputs input[type="submit"] {
 
 /* tablet */
 @media screen and (min-width:426px) {
-    
+    /* font sizes */
+    .container .h1 {font-size: var(--h1);}
+    .container .h2 {font-size: var(--h2);}
+    .container .h3 {font-size: var(--h3);}
+    .container .h4 {font-size: var(--h4);}
+    .container .h5 {font-size: var(--h5);}
+    .container .h6 {font-size: var(--h6);}
+    .container .paragraph {font-size: var(--paragraph);}
+    .container .small {font-size: var(--small);}
+
+    /* HEADER */
+    header {align-items: center;}
+    header .title .img {width: 40px; height: 40px;}
+    header nav .nav-hamburger {display: none;}
+    header nav .nav {background-color: var(--primary-500); position: static;}
+    header nav .nav ul > li {display: inline-block;}
+    header nav .nav ul > li > a {padding: 10px 15px;}
+    header nav .nav ul > li > a:hover,
+    header nav .nav ul > li > a:focus {border-bottom: 2px solid var(--neutro-50); background-color: var(--primary-500);}
+
+    /* body principle info */
+    main .principle .info {width: 290px; padding: 280px 0;}
+
+    /* body abour me description */
+    main .about-me .description {margin-inline: 20px;}
+    main .about-me .description .img {width: 70%; height: 70%;}
+
+    /* body proyects card */
+    main .proyects .cards {
+        margin-inline: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* body contact */
+    main .contact form {margin-inline: 20px;}
+}
+
+@media screen and (min-width:620px) {
+    /* body about me description */
+    main .about-me .description {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-inline: 20px;
+    }
+    main .about-me .description .img,
+    main .about-me .description .paragraph {width: 50%;}
+
+    /* body proyects card */
+    main .proyects .cards {
+        flex-direction: row;
+        gap: 15px;
+    }
 }
