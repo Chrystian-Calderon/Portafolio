@@ -195,6 +195,10 @@ header nav .nav a {
 header nav .nav a:hover,
 header nav .nav a:focus {background-color: var(--primary-900);}
 
+header nav .nav ul > li > #selectLanguage .selected-text {display: none;}
+header nav .nav ul > li > #selectLanguage ul {display: flex;}
+header nav .nav ul > li > #selectLanguage ul > li {display: inline-block; width: 50%;}
+
 /* BODY */
 
 /* body principle */
@@ -293,6 +297,12 @@ main .proyects {
 }
 
 /* body proyects cards */
+main .proyects .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 main .proyects .card {
     margin: 0 10px;
     display: flex;
@@ -426,6 +436,20 @@ main .contact form .inputs input[type="submit"] {
     header nav .nav ul > li > a {padding: 10px 15px;}
     header nav .nav ul > li > a:hover,
     header nav .nav ul > li > a:focus {border-bottom: 2px solid var(--neutro-50); background-color: var(--primary-500);}
+    header nav .nav ul > li > #selectLanguage {padding: 10px 15px; position: relative;}
+    header nav .nav ul > li > #selectLanguage .selected-text {display: block;}
+    header nav .nav ul > li > #selectLanguage ul {display: none;}
+    header nav .nav ul > li > #selectLanguage .visible {
+        display: block;
+        width: 100%;
+        background-color: var(--primary-600);
+        border: 1px solid var(--neutro-50);
+        position: absolute;
+        top: 45px;
+        left: 0;
+    }
+    header nav .nav ul > li > #selectLanguage .visible a:hover,
+    header nav .nav ul > li > #selectLanguage .visible a:focus {background-color: var(--primary-700);}
 
     /* body principle info */
     main .principle .info {width: 290px; padding: 280px 0;}
@@ -447,6 +471,9 @@ main .contact form .inputs input[type="submit"] {
 }
 
 @media screen and (min-width:620px) {
+    /* header title */
+    .container header .title-name {display: block;}
+
     /* body about me description */
     main .about-me .description {
         display: flex;
@@ -462,4 +489,22 @@ main .contact form .inputs input[type="submit"] {
         flex-direction: row;
         gap: 15px;
     }
+
+    /* body contact */
+    main .contact form {margin-inline: auto; width: 80%;}
+}
+
+/* computer */
+@media screen and (min-width:769px) {
+    main .about-me,
+    main .proyects,
+    main .contact {padding: 30px;}
+
+    /* body about me */
+    main .about-me .description {width: 800px; margin-inline: auto;}
+    main .about-me .description .img {width: 310px; height: 310px;}
+    main .about-me .description .paragraph {width: 50%;}
+
+    /* body contact */
+    main .contact form {width: 500px;}
 }

@@ -1,6 +1,3 @@
-<?php
-$message = isset($_GET['message']) ? $_GET['message'] : null;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +8,6 @@ $message = isset($_GET['message']) ? $_GET['message'] : null;
 </head>
 <body>
     <div class="container">
-        <?php
-        if (!empty($message)) {
-            echo '
-            <div class="message">
-                '. $message .'
-            </div>';
-        }
-        ?>
         <header>
             <div class="title">
                 <div class="img">
@@ -39,6 +28,15 @@ $message = isset($_GET['message']) ? $_GET['message'] : null;
                         <li><a href="#about-me" class="option paragraph">About me</a></li>
                         <li><a href="#proyects" class="option paragraph">Proyects</a></li>
                         <li><a href="#contact" class="option paragraph">Contact</a></li>
+                        <li>
+                            <div id="selectLanguage">
+                                <span class="selected-text">en</span>
+                                <ul >
+                                    <li><a href="./">en</a></li>
+                                    <li><a href="./../es/">es</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -148,7 +146,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : null;
             </div>
             <div class="contact" id="contact">
                 <h3 class="h5">Contact</h3>
-                <form action="contact.php" method="POST">
+                <form action="https://formspree.io/f/mwkgqbbd" method="POST">
                     <div class="inputs">
                         <label for="name" class="h6">Name:</label>
                         <input type="text" name="name" id="name" class="h6" required>
