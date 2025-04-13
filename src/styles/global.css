@@ -15,3 +15,12 @@
     --color-900: #0E4A6C;
     --color-950: #092F48;
 }
+
+h1, h2, h3, h4, h5, h6, p, a, li, span, button { font-family: var(--font-roboto); }
+h1, .font-h1 { font-size: 2.5rem; }
+h2, .font-h2 { font-size: 2rem; }
+h3, .font-h3 { font-size: 1.75rem; }
+h4, .font-h4 { font-size: 1.5rem; }
+h5, .font-h5 { font-size: 1.25rem; }
+h6, .font-h6 { font-size: 1rem; }
+.family-roboto { font-family: var(--font-roboto); }
