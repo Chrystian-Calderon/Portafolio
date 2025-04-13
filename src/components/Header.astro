@@ -1,23 +1,146 @@
 ---
 import "../styles/global.css";
+import { Image } from "astro:assets";
+import logo from "../images/logo portafolio.png";
 ---
 
-<nav class="bg-600">
-  <div class="logo">
-    <div class="img">
-      <img src="" alt="" />
+<nav class="sticky top-0">
+  <div class="flex justify-between px-2 py-1 relative z-1 bg-600">
+    <div class="flex">
+      <div class="img bg-50 rounded-full">
+        <Image src={logo} alt="logo" width="40" height="40" />
+      </div>
+      <h1 class="hidden sm:block text-50 font-bold font-h2">Chrys Ralf</h1>
     </div>
+    <!-- hamburger -->
+    <button
+      type="button"
+      class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset sm:hidden"
+      id="btn-hamburger"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <svg
+        class="block size-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        data-slot="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+      <svg
+        class="hidden size-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+        data-slot="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"></path>
+      </svg>
+    </button>
   </div>
-  <div class="routes">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Projects</a></li>
-      <li><a href="">Contact</a></li>
-      <li><a href="">About me</a></li>
-    </ul>
-    <div class="language">
-      <div>EN</div>
-      <div>ES</div>
+  <div
+    class="absolute left-0 top-full w-full duration-700 ease-in-out transform -translate-y-60 opacity-0 pointer-events-none hidden sm:hidden"
+    id="mobile-menu"
+  >
+    <div class="text-center space-y-1 bg-600">
+      <a
+        href=""
+        class="block border-b-2 font-h4 text-50 transition hover:font-bold hover:bg-[var(--color-700)]"
+        >Home</a
+      >
+      <a
+        href=""
+        class="block border-b-2 font-h4 text-50 transition hover:font-bold hover:bg-[var(--color-700)]"
+        >Projects</a
+      >
+      <a
+        href=""
+        class="block border-b-2 font-h4 text-50 hover:font-bold hover:bg-[var(--color-700)]"
+        >Contact</a
+      >
+      <a
+        href=""
+        class="block border-b-2 font-h4 text-50 hover:font-bold hover:bg-[var(--color-700)]"
+        >About me</a
+      >
+      <div class="flex w-full">
+        <div class="w-1/2 font-h4 text-50 family-roboto" id="lang-en">EN</div>
+        <div class="w-1/2 font-h4 text-50 family-roboto" id="lang-es">ES</div>
+      </div>
     </div>
   </div>
 </nav>
+<script is:inline>
+  const lang = navigator.language || navigator.userLanguage;
+  console.log(lang);
+  document
+    .getElementById("lang-en")
+    .classList.add(lang === "en" ? "bg-800" : "");
+  document
+    .getElementById("lang-en")
+    .classList.add(lang === "es" ? "bg-800" : "");
+
+  // if (lang.startsWith("es")) {
+  //   window.location.href = "/es";
+  // } else if (lang.startsWith("en")) {
+  //   window.location.href = "/en";
+  // } else {
+  //   window.location.href = "/en";
+  // }
+</script>
+<script is:inline>
+  const btnHamburger = document.getElementById("btn-hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const btnHamburgerIcon = btnHamburger.querySelectorAll("svg");
+
+  btnHamburger.addEventListener("click", () => {
+    const btnHamburgerClick = btnHamburger.ariaExpanded === "true";
+
+    btnHamburger.ariaExpanded = !btnHamburgerClick;
+    if (btnHamburgerClick) {
+      btnHamburgerIcon[0].classList.remove("hidden");
+      btnHamburgerIcon[1].classList.add("hidden");
+      mobileMenu.classList.remove(
+        "translate-y-0",
+        "opacity-100",
+        "pointer-events-auto"
+      );
+      mobileMenu.classList.add(
+        "-translate-y-60",
+        "opacity-0",
+        "pointer-events-none"
+      );
+      setTimeout(() => {
+        mobileMenu.classList.toggle("hidden");
+      }, 700);
+    } else {
+      btnHamburgerIcon[0].classList.add("hidden");
+      btnHamburgerIcon[1].classList.remove("hidden");
+      mobileMenu.classList.toggle("hidden");
+      requestAnimationFrame(() => {
+        mobileMenu.classList.remove(
+          "-translate-y-60",
+          "opacity-0",
+          "pointer-events-none"
+        );
+        mobileMenu.classList.add(
+          "translate-y-0",
+          "opacity-100",
+          "pointer-events-auto"
+        );
+      });
+    }
+  });
+</script>
