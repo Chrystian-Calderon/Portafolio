@@ -1,5 +1,157 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import imgGitHub from "../../images/Github_dark.svg";
+import imgLinkedin from "../../images/linkedin.svg";
+import imgHTML from "../../images/html5.svg";
+import imgCSS from "../../images/css_old.svg";
+import imgJS from "../../images/javascript.svg";
+import imgJava from "../../images/java.svg";
+import imgPython from "../../images/python.svg";
+import imgPHP from "../../images/php_dark.svg";
+import imgExpress from "../../images/expressjs_dark.svg";
+import imgReact from "../../images/react_dark.svg";
+import imgBootstrap from "../../images/bootstrap.svg";
+import imgSpring from "../../images/spring.svg";
+import imgTailwind from "../../images/tailwindcss.svg";
+import imgMySQL from "../../images/mysql.svg";
+import imgGit from "../../images/git.svg";
+import imgPostman from "../../images/postman.svg";
+
+import Button from "../../components/button.astro";
+
+const items = [
+  { src: imgHTML, label: "HTML", alt: "logo html", minW: "67" },
+  { src: imgCSS, label: "CSS", alt: "logo css", minW: "58" },
+  { src: imgJS, label: "JavaScript", alt: "logo javascript", minW: "98" },
+  { src: imgJava, label: "Java", alt: "logo java", minW: "56" },
+  { src: imgPython, label: "Python", alt: "logo python", minW: "76" },
+  { src: imgPHP, label: "", alt: "logo php", minW: "48" },
+  { src: imgExpress, label: "ExpressJS", alt: "logo express", minW: "100" },
+  { src: imgReact, label: "React", alt: "logo react", minW: "71" },
+  { src: imgBootstrap, label: "Bootstrap", alt: "logo bootstrap", minW: "100" },
+  {
+    src: imgTailwind,
+    label: "Tailwind CSS",
+    alt: "logo tailwind css",
+    minW: "129",
+  },
+  { src: imgMySQL, label: "MySQL", alt: "logo mysql", minW: "77" },
+  { src: imgGit, label: "Git", alt: "logo git", minW: "50" },
+  { src: imgPostman, label: "Postman", alt: "logo postman", minW: "89" },
+];
+
+const carouselItems = [...items, ...items];
 ---
 
-<Layout> hello world </Layout>
+<Layout>
+  <!-- index -->
+  <div class="relative p-3 bg-950 h-9/10">
+    <div
+      class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
+      <div class="relative">
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-0 -top-10"
+        >
+          <Image src={imgHTML} alt="logo html" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-10 -top-30"
+        >
+          <Image src={imgJS} alt="logo javascript" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-18 -top-2"
+        >
+          <Image src={imgCSS} alt="logo css" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-30 -top-17"
+        >
+          <Image src={imgJava} alt="logo java" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute right-0 -top-5"
+        >
+          <Image src={imgPython} alt="logo python" />
+        </div>
+      </div>
+      <div class="relative flex flex-col gap-2 z-1">
+        <h5 class="text-50 font-bold">Hi<br />I'm Chrystian Calderon</h5>
+        <span class="text-50">Developer Back-End</span>
+        <div class="flex gap-2">
+          <Button text="DOWNLOAD CV" />
+          <Button text="CONTACT" />
+        </div>
+        <div class="flex gap-2">
+          <Image src={imgGitHub} alt="logo github" width={30} height={30} />
+          <Image src={imgLinkedin} alt="logo linkedin" width={30} height={30} />
+        </div>
+      </div>
+      <div class="relative">
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-0 -bottom-20"
+        >
+          <Image src={imgExpress} alt="logo express" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-10 -bottom-35"
+        >
+          <Image src={imgReact} alt="logo react" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-18 -bottom-12"
+        >
+          <Image src={imgBootstrap} alt="logo bootstrap" />
+        </div>
+        <div
+          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute right-0 top-20"
+        >
+          <Image src={imgSpring} alt="logo spring" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- projects -->
+  <div class="bg-900 p-2">
+    <h2>Proyects</h2>
+    <div>
+      <div>
+        <h2></h2>
+        <p></p>
+        <div></div>
+      </div>
+      <div>
+        <img src="" alt="" />
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <!-- tech stack -->
+  <div class="bg-950 text-50 pb-2">
+    <h5 class="text-center font-bold py-3">Tech Stack</h5>
+    <div class="overflow-hidden w-full">
+      <div
+        class="inline-flex gap-4 whitespace-nowrap animate-scroll items-center transform-x-[50%]"
+      >
+        <!-- {
+          carouselItems.map((item, index) => (
+            <div
+              class={`flex gap-2 items-center min-w-[${item.minW}px]`}
+              key={index}
+            >
+              <Image src={item.src} alt={item.alt} class="h-6 w-auto" />
+              <span class="text-sm">{item.label}</span>
+            </div>
+          ))
+        } -->
+      </div>
+    </div>
+  </div>
+  <!-- contact -->
+  <div>
+    <form action=""></form>
+    <img src="" alt="" />
+  </div>
+</Layout>
