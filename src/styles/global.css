@@ -82,6 +82,53 @@ h6,
     @apply flex gap-2;
 }
 
+/* main */
+.main {
+    @apply flex items-center bg-950 px-25 h-[calc(100dvh-70px)];
+}
+
+.main .main-content {
+    @apply flex flex-col flex-1/2 justify-center;
+}
+
+/* main icons */
+.main .main-content-icons {
+    @apply relative h-[50px];
+}
+
+.main .main-content-icons>.icons {
+    @apply flex items-center justify-center border border-50 rounded w-[50px] h-[50px] absolute;
+}
+
+/* main body */
+.main .main-content-body {
+    @apply flex flex-col gap-3 text-50 font-bold;
+}
+
+.main .main-content-body>div {
+    @apply flex gap-3;
+}
+
+/* main perfil */
+.main .perfil {
+    @apply relative;
+}
+
+/* main perfil astro */
+.main .perfil .perfil-astro {
+    @apply absolute -top-4 -left-2 drop-shadow-500 drop-shadow-sm;
+}
+
+/* main perfil hexagon */
+.main .perfil>.hexagon {
+    @apply relative rounded-xl w-25 h-[63px] bg-300;
+}
+
+.main .perfil>.hexagon:after,
+.main .perfil>.hexagon:before {
+    content: "";
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -92,6 +139,24 @@ h6,
     }
 }
 
+@keyframes icon-float {
+    0% {
+        transform: translate(10px, 10px);
+    }
+
+    50% {
+        transform: translate(-10px, -10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
 .animate-scroll {
     animation: scroll 60s linear infinite;
+}
+
+.animate-icon-float {
+    animation: icon-float 20s infinite;
 }
