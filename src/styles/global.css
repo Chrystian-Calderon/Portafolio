@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 @import "tailwindcss";
+@tailwind utilities;
 
 @theme {
     --font-roboto: 'Roboto', sans-serif;
+    --font-rowdies: 'Rowdies', sans-serif;
     --color-50: #F0F9FF;
     --color-100: #E1F2FD;
     --color-200: #BBE6FC;
@@ -16,11 +19,79 @@
     --color-950: #092F48;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li, span, button { font-family: var(--font-roboto); }
-h1, .font-h1 { font-size: 2.5rem; }
-h2, .font-h2 { font-size: 2rem; }
-h3, .font-h3 { font-size: 1.75rem; }
-h4, .font-h4 { font-size: 1.5rem; }
-h5, .font-h5 { font-size: 1.25rem; }
-h6, .font-h6 { font-size: 1rem; }
-.family-roboto { font-family: var(--font-roboto); }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+span,
+button {
+    font-family: var(--font-roboto);
+}
+
+h1,
+.font-h1 {
+    font-family: var(--font-rowdies);
+    font-size: 2.5rem;
+}
+
+h2,
+.font-h2 {
+    font-size: 2rem;
+}
+
+h3,
+.font-h3 {
+    font-size: 1.75rem;
+}
+
+h4,
+.font-h4 {
+    font-size: 1.5rem;
+}
+
+h5,
+.font-h5 {
+    font-size: 1.25rem;
+}
+
+h6,
+.font-h6 {
+    font-size: 1rem;
+}
+
+/* img logo */
+.img-logo>img {
+    @apply drop-shadow-50 drop-shadow-sm;
+}
+
+/* nav link */
+.nav-link {
+    @apply flex items-center gap-10 text-50;
+}
+
+.nav-link div:not(.language) {
+    @apply h-fit cursor-pointer hover:border-b-3 hover:border-50 hover:scale-110 transition;
+}
+
+.nav-link>div.language {
+    @apply flex gap-2;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 60s linear infinite;
+}
