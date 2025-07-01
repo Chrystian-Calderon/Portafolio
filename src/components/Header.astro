@@ -4,13 +4,24 @@ import { Image } from "astro:assets";
 import logo from "../images/logo portafolio.png";
 ---
 
-<nav class="sticky top-0">
-  <div class="flex justify-between px-2 py-1 relative z-1 bg-600">
-    <div class="flex">
-      <div class="img bg-50 rounded-full">
-        <Image src={logo} alt="logo" width="40" height="40" />
+<nav class="sticky top-0 z-1">
+  <div class="flex justify-between px-25 py-3 relative bg-950">
+    <div class="flex gap-3">
+      <div class="img-logo">
+        <Image src={logo} alt="logo" width="50" height="50" />
       </div>
-      <h1 class="hidden sm:block text-50 font-bold font-h2">Chrys Ralf</h1>
+      <h1 class="hidden sm:block text-50 font-h2 cursor-pointer">Chrys Ralf</h1>
+    </div>
+    <!-- nav link -->
+    <div class="nav-link">
+      <div><a href="/">Home</a></div>
+      <div><a href="#projects">Projects</a></div>
+      <div><a href="#contact">Contact</a></div>
+      <div><a href="/about">About me</a></div>
+      <div class="language">
+        <div>EN</div>
+        <div>ES</div>
+      </div>
     </div>
     <!-- hamburger -->
     <button
