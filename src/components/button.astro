@@ -2,6 +2,8 @@
 const { text = "boton", color = "bg-500", textColor = "text-50" } = Astro.props;
 ---
 
-<button class=`p-2 rounded ${color} ${textColor}`>
+<button
+  class=`p-2 rounded ${color} ${textColor} cursor-pointer transition hover:bg-700`
+>
   {text}
 </button>

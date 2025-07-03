@@ -17,6 +17,9 @@ import imgTailwind from "../../images/tailwindcss.svg";
 import imgMySQL from "../../images/mysql.svg";
 import imgGit from "../../images/git.svg";
 import imgPostman from "../../images/postman.svg";
+import imgHexagon from "../../images/hexagon.svg";
+import imgAstro from "../../images/astro_dark.svg";
+import imgPerfil from "../../images/perfil.png";
 
 import Button from "../../components/button.astro";
 
@@ -42,75 +45,59 @@ const items = [
 ];
 
 const carouselItems = [...items, ...items];
+const floatIcons = [
+  { src: imgHTML, alt: "logo html", top: "-30px", left: "30px" },
+  { src: imgCSS, alt: "logo css", top: "20px", left: "140px" },
+  { src: imgJS, alt: "logo javascript", top: "-100px", left: "220px" },
+  { src: imgJava, alt: "logo java", top: "-20px", left: "320px" },
+  { src: imgPython, alt: "logo python", top: "100px", left: "420px" },
+  { src: imgExpress, alt: "logo express", top: "20px", left: "80px" },
+  { src: imgReact, alt: "logo react", top: "80px", left: "200px" },
+  { src: imgBootstrap, alt: "logo bootstrap", top: "30px", left: "400px" },
+  { src: imgSpring, alt: "logo bootstrap", top: "80px", left: "600px" },
+];
+const floatIconsTop = floatIcons.slice(0, 5);
+const floatIconsButtom = floatIcons.slice(5, 9);
 ---
 
 <Layout>
-  <!-- index -->
-  <div class="relative p-3 bg-950 h-9/10">
-    <div
-      class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-    >
-      <div class="relative">
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-0 -top-10"
-        >
-          <Image src={imgHTML} alt="logo html" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-10 -top-30"
-        >
-          <Image src={imgJS} alt="logo javascript" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-18 -top-2"
-        >
-          <Image src={imgCSS} alt="logo css" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-30 -top-17"
-        >
-          <Image src={imgJava} alt="logo java" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute right-0 -top-5"
-        >
-          <Image src={imgPython} alt="logo python" />
-        </div>
+  <!-- main -->
+  <div class="main">
+    <div class="main-content">
+      <div class="main-content-icons">
+        {
+          floatIconsTop.map((icon) => (
+            <div class="icons" style={`top: ${icon.top}; left: ${icon.left}`}>
+              <Image src={icon.src} alt={icon.alt} width="30" height="30" />
+            </div>
+          ))
+        }
       </div>
-      <div class="relative flex flex-col gap-2 z-1">
-        <h5 class="text-50 font-bold">Hi<br />I'm Chrystian Calderon</h5>
-        <span class="text-50">Developer Back-End</span>
-        <div class="flex gap-2">
+      <div class="main-content-body">
+        <h2 class="font-h2">Hi<br />I'm Chrystian Calderon</h2>
+        <span class="font-h3">Developer Back-End</span>
+        <div>
           <Button text="DOWNLOAD CV" />
           <Button text="CONTACT" />
         </div>
-        <div class="flex gap-2">
+        <div>
           <Image src={imgGitHub} alt="logo github" width={30} height={30} />
           <Image src={imgLinkedin} alt="logo linkedin" width={30} height={30} />
         </div>
       </div>
-      <div class="relative">
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-0 -bottom-20"
-        >
-          <Image src={imgExpress} alt="logo express" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-10 -bottom-35"
-        >
-          <Image src={imgReact} alt="logo react" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute left-18 -bottom-12"
-        >
-          <Image src={imgBootstrap} alt="logo bootstrap" />
-        </div>
-        <div
-          class="p-2 rounded w-[40px] h-[40px] bg-900 border border-solid border-50 absolute right-0 top-20"
-        >
-          <Image src={imgSpring} alt="logo spring" />
-        </div>
+      <div class="main-content-icons">
+        {
+          floatIconsButtom.map((icon) => (
+            <div class="icons" style={`top: ${icon.top}; left: ${icon.left}`}>
+              <Image src={icon.src} alt={icon.alt} width="30" height="30" />
+            </div>
+          ))
+        }
       </div>
+    </div>
+    <div class="perfil">
+      <Image src={imgAstro} alt="logo astro" width={80} class="perfil-astro" />
+      <Image src={imgPerfil} alt="autor Chrystian" width={400} class="autor" />
     </div>
   </div>
   <!-- projects -->
