@@ -84,7 +84,7 @@ h6,
 
 /* main */
 .main {
-    @apply flex items-center bg-950 px-25 h-[calc(100dvh-70px)];
+    @apply flex items-center bg-950 h-[calc(100dvh-70px)] max-w-5xl mx-auto;
 }
 
 .main .main-content {
@@ -111,24 +111,19 @@ h6,
 
 /* main perfil */
 .main .perfil {
-    @apply relative;
+    @apply relative flex-1/2 h-[500px];
 }
 
 /* main perfil astro */
 .main .perfil .perfil-astro {
-    @apply absolute -top-4 -left-2 drop-shadow-500 drop-shadow-sm;
+    @apply absolute top-8 left-20 drop-shadow-500 drop-shadow-lg;
 }
 
-/* main perfil hexagon */
-.main .perfil>.hexagon {
-    @apply relative rounded-xl w-25 h-[63px] bg-300;
+.main .perfil .autor {
+    @apply absolute top-0 -right-10;
 }
 
-.main .perfil>.hexagon:after,
-.main .perfil>.hexagon:before {
-    content: "";
-}
-
+/* animations */
 @keyframes scroll {
     0% {
         transform: translateX(0);

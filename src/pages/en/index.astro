@@ -19,6 +19,7 @@ import imgGit from "../../images/git.svg";
 import imgPostman from "../../images/postman.svg";
 import imgHexagon from "../../images/hexagon.svg";
 import imgAstro from "../../images/astro_dark.svg";
+import imgPerfil from "../../images/perfil.png";
 
 import Button from "../../components/button.astro";
 
@@ -65,7 +66,7 @@ const floatIconsButtom = floatIcons.slice(5, 9);
     <div class="main-content">
       <div class="main-content-icons">
         {
-          floatIconsTop.map((icon, index) => (
+          floatIconsTop.map((icon) => (
             <div class="icons" style={`top: ${icon.top}; left: ${icon.left}`}>
               <Image src={icon.src} alt={icon.alt} width="30" height="30" />
             </div>
@@ -96,7 +97,7 @@ const floatIconsButtom = floatIcons.slice(5, 9);
     </div>
     <div class="perfil">
       <Image src={imgAstro} alt="logo astro" width={80} class="perfil-astro" />
-      <Image src={imgHexagon} alt="hexagon" width={400} />
+      <Image src={imgPerfil} alt="autor Chrystian" width={400} class="autor" />
     </div>
   </div>
   <!-- projects -->
