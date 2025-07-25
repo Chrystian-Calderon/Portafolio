@@ -4,23 +4,23 @@ import { Image } from "astro:assets";
 import logo from "../images/logo portafolio.png";
 ---
 
-<nav class="sticky top-0 z-1">
+<nav class="sticky top-0 z-50">
   <div class="flex justify-between px-25 py-3 relative bg-950">
-    <div class="flex gap-3">
+    <a href="/" class="flex gap-3">
       <div class="img-logo">
         <Image src={logo} alt="logo" width="50" height="50" />
       </div>
-      <h1 class="hidden sm:block text-50 font-h2 cursor-pointer">Chrys Ralf</h1>
-    </div>
+      <h1 class="hidden sm:block text-50 font-h2">Chrys Ralf</h1>
+    </a>
     <!-- nav link -->
     <div class="nav-link">
-      <div><a href="/">Home</a></div>
+      <div id="home-link-container"></div>
       <div><a href="#projects">Projects</a></div>
       <div><a href="#contact">Contact</a></div>
-      <div><a href="/about">About me</a></div>
+      <div><a href="/en/about">About me</a></div>
       <div class="language">
-        <div>EN</div>
-        <div>ES</div>
+        <button id="lang-en" type="button" class="px-2 py-1 rounded transition cursor-pointer">EN</button>
+        <button id="lang-es" type="button" class="px-2 py-1 rounded transition cursor-pointer">ES</button>
       </div>
     </div>
     <!-- hamburger -->
@@ -87,29 +87,86 @@ import logo from "../images/logo portafolio.png";
         >About me</a
       >
       <div class="flex w-full">
-        <div class="w-1/2 font-h4 text-50 family-roboto" id="lang-en">EN</div>
-        <div class="w-1/2 font-h4 text-50 family-roboto" id="lang-es">ES</div>
+        <button id="lang-en-mobile" type="button" class="w-1/2 font-h4 text-50 family-roboto px-2 py-1 rounded transition cursor-pointer">EN</button>
+        <button id="lang-es-mobile" type="button" class="w-1/2 font-h4 text-50 family-roboto px-2 py-1 rounded transition cursor-pointer">ES</button>
       </div>
     </div>
   </div>
 </nav>
 <script is:inline>
-  const lang = navigator.language || navigator.userLanguage;
-  console.log(lang);
-  document
-    .getElementById("lang-en")
-    .classList.add(lang === "en" ? "bg-800" : "");
-  document
-    .getElementById("lang-en")
-    .classList.add(lang === "es" ? "bg-800" : "");
+  // detect language and set active button
+  const path = window.location.pathname;
+  const isEs = /\/es(\/|$)/.test(path);
+  const isEn = /\/en(\/|$)/.test(path);
 
-  // if (lang.startsWith("es")) {
-  //   window.location.href = "/es";
-  // } else if (lang.startsWith("en")) {
-  //   window.location.href = "/en";
-  // } else {
-  //   window.location.href = "/en";
-  // }
+  const btnEn = document.getElementById("lang-en");
+  const btnEs = document.getElementById("lang-es");
+  const btnEnMobile = document.getElementById("lang-en-mobile");
+  const btnEsMobile = document.getElementById("lang-es-mobile");
+
+  function setLangActive(esActive) {
+    if (esActive) {
+      btnEs.classList.add("bg-800", "text-white", "font-bold");
+      btnEn.classList.remove("bg-800", "text-white", "font-bold");
+      btnEsMobile.classList.add("bg-800", "text-white", "font-bold");
+      btnEnMobile.classList.remove("bg-800", "text-white", "font-bold");
+    } else {
+      btnEn.classList.add("bg-800", "text-white", "font-bold");
+      btnEs.classList.remove("bg-800", "text-white", "font-bold");
+      btnEnMobile.classList.add("bg-800", "text-white", "font-bold");
+      btnEsMobile.classList.remove("bg-800", "text-white", "font-bold");
+    }
+  }
+
+  setLangActive(isEs);
+
+  // home link dinamic
+  const homeLinkContainer = document.getElementById('home-link-container');
+  let homeLink = null;
+  const lang = path.split('/')[1];
+  if (path === '/en' || path === '/es') {
+    homeLink = document.createElement('a');
+    homeLink.href = '#main';
+    homeLink.textContent = 'Home';
+    homeLink.className = 'cursor-pointer';
+  } else if (isEn) {
+    homeLink = document.createElement('a');
+    homeLink.href = '/en';
+    homeLink.textContent = 'Home';
+    homeLink.className = 'cursor-pointer';
+  } else if (isEs) {
+    homeLink = document.createElement('a');
+    homeLink.href = '/es';
+    homeLink.textContent = 'Home';
+    homeLink.className = 'cursor-pointer';
+  }
+  if (homeLink) homeLinkContainer.appendChild(homeLink);
+
+  // scroll gently
+  document.querySelectorAll('.nav-link a[href^="#"], #home-link-container a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // language buttons
+  btnEn.addEventListener("click", () => {
+    if (!isEn) window.location.href = "/en";
+  });
+  btnEs.addEventListener("click", () => {
+    if (!isEs) window.location.href = "/es";
+  });
+  btnEnMobile.addEventListener("click", () => {
+    if (!isEn) window.location.href = "/en";
+  });
+  btnEsMobile.addEventListener("click", () => {
+    if (!isEs) window.location.href = "/es";
+  });
 </script>
 <script is:inline>
   const btnHamburger = document.getElementById("btn-hamburger");
