@@ -17,11 +17,14 @@ import imgTailwind from "../../images/tailwindcss.svg";
 import imgMySQL from "../../images/mysql.svg";
 import imgGit from "../../images/git.svg";
 import imgPostman from "../../images/postman.svg";
-import imgHexagon from "../../images/hexagon.svg";
 import imgAstro from "../../images/astro_dark.svg";
 import imgPerfil from "../../images/perfil.png";
+import imgProject1 from "../../images/img-morkup.jpg";
+import imgChibi from "../../images/ralf_chibi.png";
 
 import Button from "../../components/button.astro";
+import IconLanguage from "../../components/IconLanguage.astro";
+import ImgCard from "../../components/ImgCard.astro";
 
 const items = [
   { src: imgHTML, label: "HTML", alt: "logo html", minW: "67" },
@@ -101,18 +104,132 @@ const floatIconsButtom = floatIcons.slice(5, 9);
     </div>
   </div>
   <!-- projects -->
-  <div class="bg-900 p-2">
-    <h2>Proyects</h2>
+  <div class="projects bg-grandient-custom">
+    <div class="projects-content">
+      <h2 class="mb-5">Proyects</h2>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="font-bold">
+            Implementing MVC in Node.js: How to Pass the Model as a Parameter
+            from the Router to the Controller
+          </h3>
+          <p>
+            Implementing MVC in Node.js: How to Pass the Model as a Parameter
+            from the Router to the Controller.
+          </p>
+          <div class="card-tech">
+            <h3 class="font-bold">Technologies</h3>
+            <div>
+              <IconLanguage
+                imgSrc={imgReact}
+                alt="image react"
+                width="30"
+                height="30"
+              />
+              <IconLanguage
+                imgSrc={imgBootstrap}
+                alt="image bootstrap"
+                width="30"
+                height="30"
+              />
+              <IconLanguage
+                imgSrc={imgExpress}
+                alt="image express"
+                width="30"
+                height="30"
+              />
+            </div>
+          </div>
+          <div class="card-buttons">
+            <Button text="View" />
+            <Button text="Github" color="bg-gray-200" textColor="text-black" />
+          </div>
+        </div>
+        <ImgCard imgSrc={imgProject1} alt="img project" position="left" />
+      </div>
+      <div class="card card-reverse">
+        <div class="card-body">
+          <h3 class="font-bold">
+            Implementing MVC in Node.js: How to Pass the Model as a Parameter
+            from the Router to the Controller
+          </h3>
+          <p>
+            Implementing MVC in Node.js: How to Pass the Model as a Parameter
+            from the Router to the Controller.
+          </p>
+          <div class="card-tech">
+            <h3 class="font-bold">Technologies</h3>
+            <div>
+              <IconLanguage
+                imgSrc={imgReact}
+                alt="image react"
+                width="30"
+                height="30"
+              />
+              <IconLanguage
+                imgSrc={imgBootstrap}
+                alt="image bootstrap"
+                width="30"
+                height="30"
+              />
+              <IconLanguage
+                imgSrc={imgExpress}
+                alt="image express"
+                width="30"
+                height="30"
+              />
+            </div>
+          </div>
+          <div class="card-buttons">
+            <Button text="View" />
+            <Button text="Github" color="bg-gray-200" textColor="text-black" />
+          </div>
+        </div>
+        <ImgCard imgSrc={imgProject1} alt="img project" position="right" />
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="font-bold">
+            Implementing MVC in Node.js: How to Pass the Model as a Parameter
+            from the Router to the Controller
+          </h3>
+          <p>
+            Implementing MVC in Node.js: How to Pass the Model as a Parameter
+            from the Router to the Controller.
+          </p>
+          <div class="card-tech">
+            <h3 class="font-bold">Technologies</h3>
+            <div>
+              <IconLanguage
+                imgSrc={imgReact}
+                alt="image react"
+                width="30"
+                height="30"
+              />
+              <IconLanguage
+                imgSrc={imgBootstrap}
+                alt="image bootstrap"
+                width="30"
+                height="30"
+              />
+              <IconLanguage
+                imgSrc={imgExpress}
+                alt="image express"
+                width="30"
+                height="30"
+              />
+            </div>
+          </div>
+          <div class="card-buttons">
+            <Button text="View" />
+            <Button text="Github" color="bg-gray-200" textColor="text-black" />
+          </div>
+        </div>
+        <ImgCard imgSrc={imgProject1} alt="img project" position="left" />
+      </div>
+    </div>
     <div>
-      <div>
-        <h2></h2>
-        <p></p>
-        <div></div>
-      </div>
-      <div>
-        <img src="" alt="" />
-        <div></div>
-      </div>
+      <Button text="See More" />
     </div>
   </div>
   <!-- tech stack -->
@@ -122,23 +239,42 @@ const floatIconsButtom = floatIcons.slice(5, 9);
       <div
         class="inline-flex gap-4 whitespace-nowrap animate-scroll items-center transform-x-[50%]"
       >
-        <!-- {
+        {
           carouselItems.map((item, index) => (
-            <div
-              class={`flex gap-2 items-center min-w-[${item.minW}px]`}
-              key={index}
-            >
-              <Image src={item.src} alt={item.alt} class="h-6 w-auto" />
-              <span class="text-sm">{item.label}</span>
+            <div class={`flex items-center mr-10`}>
+              <Image
+                src={item.src}
+                alt={item.alt}
+                class={`mr-5`}
+                style={`min-width: 30px; height: 30px;`}
+              />
+              {/* <span class="text-sm">{item.label}</span> */}
             </div>
           ))
-        } -->
+        }
       </div>
     </div>
   </div>
   <!-- contact -->
-  <div>
-    <form action=""></form>
-    <img src="" alt="" />
+  <div class="contact">
+    <div class="contact-content">
+      <h2>Contact Us</h2>
+      <form>
+        <div class="input">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="input">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="input">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5"></textarea>
+        </div>
+        <Button text="Send" />
+      </form>
+      <Image src={imgChibi} alt="Chrys Ralf Chibi" class="h-[500px]" />
+    </div>
   </div>
 </Layout>
