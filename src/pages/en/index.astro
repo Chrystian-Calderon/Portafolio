@@ -266,7 +266,10 @@ const floatIconsButtom = floatIcons.slice(5, 9);
       <div
         class="flex flex-col md:flex-row items-center md:items-stretch w-full"
       >
-        <form class="flex-1 w-full">
+        <form 
+          action="https://formspree.io/f/mblkodza"
+          method="POST"
+          class="flex-1 w-full">
           <div class="input">
             <input type="text" name="name" id="name" placeholder="" />
             <label for="name">Name</label>
@@ -281,7 +284,7 @@ const floatIconsButtom = floatIcons.slice(5, 9);
             <label for="message">Message</label>
           </div>
           <div class="w-fit">
-            <Button text="Send" />
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded cursor-pointer">Send</button>
           </div>
         </form>
         <div class="flex-1 flex justify-center items-center w-full">
