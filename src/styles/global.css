@@ -41,6 +41,7 @@ h1,
 
 h2,
 .font-h2 {
+    font-family: var(--font-rowdies);
     font-size: 2rem;
 }
 
@@ -114,13 +115,79 @@ h6,
     @apply relative flex-1/2 h-[500px];
 }
 
-/* main perfil astro */
+/* main perfil astro and perfil */
 .main .perfil .perfil-astro {
     @apply absolute top-8 left-20 drop-shadow-500 drop-shadow-lg;
 }
 
 .main .perfil .autor {
     @apply absolute top-0 -right-10;
+}
+
+/* projects */
+.projects {
+    @apply py-50 text-50;
+}
+
+.bg-grandient-custom {
+    background: linear-gradient(var(--color-950) 0%, black 20%, black 90%, var(--color-950)) 100%;
+}
+
+.projects-content {
+    @apply w-5xl mx-auto;
+}
+
+/* projects card */
+.projects-content .card {
+    @apply flex gap-20 mb-10;
+}
+
+.projects-content .card.card-reverse {
+    @apply flex-row-reverse;
+}
+
+.projects-content .card .card-body {
+    @apply flex flex-col gap-3 flex-1/2 justify-center h-[408px];
+}
+
+/* projects button */
+.projects>div:last-child {
+    @apply w-fit mx-auto;
+}
+
+.projects-content .card .card-body .card-tech>div,
+.projects-content .card .card-body .card-buttons {
+    @apply flex gap-2;
+}
+
+/* contact */
+.contact {
+    @apply py-50 text-50;
+}
+
+.contact-content {
+    @apply flex relative w-5xl mx-auto border-15 border-500 rounded;
+}
+
+.contact-content h2 {
+    @apply absolute -top-10 left-5 bg-950 px-2;
+}
+
+.contact-content form {
+    @apply m-10 p-5 rounded border;
+}
+
+.contact-content form .input {
+    @apply flex flex-col gap-2;
+}
+
+.contact-content form .input label {
+    @apply text-50 font-bold;
+}
+
+.contact-content form .input input,
+.contact-content form .input textarea {
+    @apply p-2 rounded border border-500 bg-950 text-50;
 }
 
 /* animations */
