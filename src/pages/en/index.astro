@@ -259,22 +259,35 @@ const floatIconsButtom = floatIcons.slice(5, 9);
   <div class="contact">
     <div class="contact-content">
       <h2>Contact Us</h2>
-      <form>
-        <div class="input">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
+      <div
+        class="flex flex-col md:flex-row items-center md:items-stretch w-full"
+      >
+        <form class="flex-1 w-full">
+          <div class="input">
+            <input type="text" name="name" id="name" placeholder="" />
+            <label for="name">Name</label>
+          </div>
+          <div class="input">
+            <input type="email" name="email" id="email" placeholder="" />
+            <label for="email">Email</label>
+          </div>
+          <div class="input">
+            <textarea name="message" id="message" rows="5" placeholder=""
+            ></textarea>
+            <label for="message">Message</label>
+          </div>
+          <div class="w-fit">
+            <Button text="Send" />
+          </div>
+        </form>
+        <div class="flex-1 flex justify-center items-center w-full">
+          <Image
+            src={imgChibi}
+            alt="Chrys Ralf Chibi"
+            class="w-auto h-full max-h-[500px] md:max-h-[400px] sm:max-h-[250px] object-contain"
+          />
         </div>
-        <div class="input">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div class="input">
-          <label for="message">Message</label>
-          <textarea name="message" id="message" rows="5"></textarea>
-        </div>
-        <Button text="Send" />
-      </form>
-      <Image src={imgChibi} alt="Chrys Ralf Chibi" class="h-[500px]" />
+      </div>
     </div>
   </div>
 </Layout>
