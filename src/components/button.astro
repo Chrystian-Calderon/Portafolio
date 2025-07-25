@@ -1,9 +1,22 @@
 ---
-const { text = "boton", color = "bg-500", textColor = "text-50" } = Astro.props;
+import { Image } from "astro:assets";
+import imgGithub from "../images/Github_light.svg";
+const {
+  text = "boton",
+  link = "#",
+  color = "bg-500",
+  textColor = "text-50",
+} = Astro.props;
 ---
 
-<button
-  class=`p-2 rounded ${color} ${textColor} cursor-pointer transition hover:bg-700`
+<a
+  href={link}
+  class={`flex gap-1 items-center p-2 rounded ${color} ${textColor} font-bold cursor-pointer transition ${text == "Github" ? "hover:bg-white" : "hover:bg-600"}`}
 >
+  {
+    text == "Github" && (
+      <Image src={imgGithub} alt="image github" width={20} height={20} />
+    )
+  }
   {text}
-</button>
+</a>
