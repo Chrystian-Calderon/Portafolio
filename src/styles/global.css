@@ -162,11 +162,11 @@ h6,
 
 /* contact */
 .contact {
-    @apply py-50 text-50;
+    @apply py-20 text-50;
 }
 
 .contact-content {
-    @apply flex relative w-5xl mx-auto border-15 border-500 rounded;
+    @apply flex flex-col relative w-5xl mx-auto border-15 border-500 rounded;
 }
 
 .contact-content h2 {
@@ -178,16 +178,24 @@ h6,
 }
 
 .contact-content form .input {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 relative mb-4;
 }
 
 .contact-content form .input label {
-    @apply text-50 font-bold;
+    @apply text-gray-400 font-bold absolute left-2 top-2 pointer-events-none transition-all duration-200;
 }
 
 .contact-content form .input input,
 .contact-content form .input textarea {
-    @apply p-2 rounded border border-500 bg-950 text-50;
+    @apply p-2 rounded border border-50 bg-900 text-50 outline-none;
+}
+
+/* Floating label effect */
+.contact-content form .input input:focus+label,
+.contact-content form .input input:not(:placeholder-shown)+label,
+.contact-content form .input textarea:focus+label,
+.contact-content form .input textarea:not(:placeholder-shown)+label {
+    @apply -top-[10px] left-[0.5rem] text-sm text-gray-400 bg-900 px-2 rounded;
 }
 
 /* animations */
