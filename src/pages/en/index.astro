@@ -80,12 +80,16 @@ const floatIconsButtom = floatIcons.slice(5, 9);
         <h2 class="font-h2">Hi<br />I'm Chrystian Calderon</h2>
         <span class="font-h3">Developer Back-End</span>
         <div>
-          <Button text="DOWNLOAD CV" />
-          <Button text="CONTACT" />
+          <Button text="DOWNLOAD CV" link="/Chrystian Calderon(EN).pdf" target="_blank" />
+          <Button text="CONTACT" link="#contact" />
         </div>
         <div>
-          <Image src={imgGitHub} alt="logo github" width={30} height={30} />
-          <Image src={imgLinkedin} alt="logo linkedin" width={30} height={30} />
+          <a href="https://github.com/Chrystian-Calderon" target="_blank" rel="noopener noreferrer">
+            <Image src={imgGitHub} alt="logo github" width={30} height={30} />
+          </a>
+          <a href="https://www.linkedin.com/in/chrystian-calderon" target="_blank" rel="noopener noreferrer">
+            <Image src={imgLinkedin} alt="logo linkedin" width={30} height={30} />
+          </a>
         </div>
       </div>
       <div class="main-content-icons">
